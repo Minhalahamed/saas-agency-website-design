@@ -20,23 +20,23 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
           <div className="max-w-2xl">
             <p className="mb-4 inline-flex rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">New • Launch faster</p>
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl">
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
               Run your product, not your plumbing
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground">
+            <p className="mt-4 text-base text-muted-foreground sm:mt-6 sm:text-lg">
               Nimbus is the modern SaaS platform that helps teams automate ops, ship faster, and scale with confidence.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact"><Button size="lg">Book a live demo</Button></Link>
-              <Link href="/pricing"><Button size="lg" variant="secondary">See pricing</Button></Link>
+            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
+              <Link href="/contact"><Button size="lg" className="w-full sm:w-auto">Book a live demo</Button></Link>
+              <Link href="/pricing"><Button size="lg" variant="secondary" className="w-full sm:w-auto">See pricing</Button></Link>
             </div>
-            {/* Headline variations */}
-            <div className="mt-6 text-sm text-muted-foreground">
+            {/* Headline variations - hidden on mobile */}
+            <div className="mt-6 text-sm text-muted-foreground hidden lg:block">
               <p className="font-medium">Headline variations:</p>
-              <ul className="list-disc pl-5 space-y-1">
+              <ul className="list-disc pl-5 space-y-1 mt-2">
                 <li>Automate the busywork. Accelerate the work that matters.</li>
                 <li>From idea to impact—launch, learn, and scale on one platform.</li>
                 <li>Ship confidently with a platform built for speed and clarity.</li>
@@ -48,14 +48,14 @@ export default function Home() {
 
       {/* Social proof */}
       <section className="border-y">
-        <div className="mx-auto max-w-7xl px-4 py-10">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
           <p className="text-center text-sm text-muted-foreground">Trusted by product-first teams</p>
-          <div className="mt-6 grid grid-cols-2 gap-6 opacity-80 sm:grid-cols-4 md:grid-cols-6">
+          <div className="mt-6 grid grid-cols-3 gap-4 opacity-80 sm:grid-cols-4 md:grid-cols-6 sm:gap-6">
             {[
               "vercel", "stripe", "notion", "linear", "figma", "supabase",
             ].map((brand) => (
               <div key={brand} className="flex items-center justify-center">
-                <div className="h-6 w-24 rounded bg-muted" />
+                <div className="h-4 w-16 rounded bg-muted sm:h-6 sm:w-24" />
               </div>
             ))}
           </div>
@@ -64,8 +64,8 @@ export default function Home() {
 
       {/* Value pillars */}
       <section>
-        <div className="mx-auto max-w-7xl px-4 py-16">
-          <div className="grid gap-6 md:grid-cols-3">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
             {[
               { icon: Rocket, title: "Launch faster", desc: "Blueprints and automations that get you to market days—not months—so you can focus on your product." },
               { icon: Shield, title: "Secure by default", desc: "Best-practice security, SSO, and audit logs built-in so compliance is never an afterthought." },
@@ -73,7 +73,7 @@ export default function Home() {
             ].map((f) => (
               <Card key={f.title}>
                 <CardHeader className="flex flex-row items-center gap-3">
-                  <f.icon className="h-5 w-5 text-primary" />
+                  <f.icon className="h-5 w-5 text-primary flex-shrink-0" />
                   <CardTitle className="text-base">{f.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-0 text-sm text-muted-foreground">{f.desc}</CardContent>
@@ -85,9 +85,9 @@ export default function Home() {
 
       {/* CTA */}
       <section className="bg-secondary">
-        <div className="mx-auto max-w-7xl px-4 py-12 text-center">
-          <h2 className="text-2xl font-semibold">See Nimbus in action</h2>
-          <p className="mt-2 text-muted-foreground">Book a 15-minute walkthrough tailored to your workflow.</p>
+        <div className="mx-auto max-w-7xl px-4 py-10 text-center sm:px-6 sm:py-12 lg:px-8">
+          <h2 className="text-xl font-semibold sm:text-2xl">See Nimbus in action</h2>
+          <p className="mt-2 text-sm text-muted-foreground sm:text-base">Book a 15-minute walkthrough tailored to your workflow.</p>
           <div className="mt-6">
             <Link href="/contact"><Button size="lg">Request demo</Button></Link>
           </div>
@@ -97,18 +97,21 @@ export default function Home() {
 
       {/* Feature preview */}
       <section>
-        <div className="mx-auto max-w-7xl px-4 py-16">
-          <div className="grid items-center gap-10 md:grid-cols-2">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <div className="grid items-center gap-8 md:grid-cols-2 lg:gap-12">
             <div>
-              <h3 className="text-3xl font-semibold">Everything you need to build momentum</h3>
-              <ul className="mt-6 space-y-3 text-sm">
+              <h3 className="text-2xl font-semibold sm:text-3xl">Everything you need to build momentum</h3>
+              <ul className="mt-6 space-y-3 text-sm sm:text-base">
                 {["Automated onboarding", "Workflow orchestration", "Powerful analytics", "Developer-friendly APIs"].map((b) => (
-                  <li key={b} className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />{b}</li>
+                  <li key={b} className="flex items-start gap-2">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary sm:h-5 sm:w-5" />
+                    <span>{b}</span>
+                  </li>
                 ))}
               </ul>
-              <div className="mt-6 flex gap-3">
-                <Link href="/features"><Button>Explore features</Button></Link>
-                <Link href="/pricing"><Button variant="secondary">Compare plans</Button></Link>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Link href="/features"><Button className="w-full sm:w-auto">Explore features</Button></Link>
+                <Link href="/pricing"><Button variant="secondary" className="w-full sm:w-auto">Compare plans</Button></Link>
               </div>
             </div>
             <div className="relative aspect-video overflow-hidden rounded-lg border bg-muted">
@@ -125,9 +128,9 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="border-t">
-        <div className="mx-auto max-w-7xl px-4 py-16">
-          <h3 className="text-center text-2xl font-semibold">What teams say</h3>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <h3 className="text-center text-xl font-semibold sm:text-2xl">What teams say</h3>
+          <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 quote:
